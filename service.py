@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-model_path = '/workspace/models/model_base_caption_capfilt_large.pth'
+model_path = '/root/autodl-tmp/BLIP/models/model_base_caption_capfilt_large.pth'
 model = blip_decoder(pretrained=model_path, image_size=384, vit='base')
 model.eval()
 model = model.to(device)
@@ -57,4 +57,4 @@ def post():
     return jsonify({"status": 0, "msg": "ok", "data": {"output": outputs}})
 
 if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0', port=52001)
+    app.run(debug=False, host='0.0.0.0', port=6008)
