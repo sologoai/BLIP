@@ -58,3 +58,4 @@ def post():
 
 if __name__ == "__main__":
     app.run(debug=False, host='0.0.0.0', port=6008)
+    print("BLIP service started on port 6008")
